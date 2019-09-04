@@ -11,14 +11,18 @@ namespace Accounting.DataLayer.Services
 {
     public class CustomerRepository : ICustomerRepository
     {
-        Accounting_DBEntities db = new Accounting_DBEntities();
+        private Accounting_DBEntities db ;
+        public CustomerRepository(Accounting_DBEntities context)
+        {
+            ///dependency Injection ! (First solution)
+           db = context;
+        }
         public bool DeleteCustomer(int customerId)
         {
             try
             {
                 var customer = db.Customers.Find(customerId);
                 db.Customers.Remove(customer);
-                Save();
                 return true;
             }
             catch
@@ -59,7 +63,6 @@ namespace Accounting.DataLayer.Services
             try
             {
                 db.Customers.Add(customer);
-                Save();
                 return true;
             }
             catch
