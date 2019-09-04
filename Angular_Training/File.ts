@@ -15,26 +15,29 @@
 // document.body.innerHTML=logPerson(user);
 
 //----02-----
-var listperson:string[]=["Hamed","Iman"];
-console.log(listperson);
+// var listperson:string[]=["Hamed","Iman"];
+// console.log(listperson);
 
-var listGen:Array<string> =["Hamed","Iman"]; 
+// var listGen:Array<string> =["Hamed","Iman"]; 
 
-//لیثتی که یک استرینگ و یک عدد میگیرد به عنوان یک آینم
-var tuple:[string,number];
-tuple=["hamed",27];
+// //لیثتی که یک استرینگ و یک عدد میگیرد به عنوان یک آینم
+// var tuple:[string,number];
+// tuple=["hamed",27];
 
-enum color{
-    green=5, //پیش فرض از صفر شروع میشود
-    red=6
-}
+// enum color{
+//     green=5, //پیش فرض از صفر شروع میشود
+//     red=6
+// }
 
-console.log(color[5])
-console.log(color.green)
+// console.log(color[5])
+// console.log(color.green)
 
-var harchi:any;//هرچیزی میشود در این تاایپ ریخت
+// var harchi:any;//هرچیزی میشود در این تاایپ ریخت
 
-harchi="asd",
-harchi=123;
+// harchi="asd",
+// harchi=123;
 
-var listHarchi:any[]=["hamed",21,true]
+// var listHarchi:any[]=["hamed",21,true]
+
+
+//----03--------
