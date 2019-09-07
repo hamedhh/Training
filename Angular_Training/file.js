@@ -29,3 +29,4 @@
 // harchi=123;
 // var listHarchi:any[]=["hamed",21,true]
 //----03--------
+var Name = 'Hamed'; //..بجای استفاده از وّرررر در جاوااسکریپت
