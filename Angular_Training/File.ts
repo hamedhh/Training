@@ -46,6 +46,8 @@
 
 
 //----04--------
+// functions
+
 // //نوع خروجی تابع را هم میتوان نوشت
 // function sum(a:number,b:number):number
 // {
@@ -69,4 +71,108 @@
 // console.log(ShowName("hamed","mamad","ali","hasan"))
 
 //----05--------
+// calsses-- Interface
+
+// interface IUser{
+//     name:string;
+//     family:string;
+//     email:string;
+//     phone?:string
+// }
+
+// let usreImpelement1:IUser={
+//     email:"d@k.com",
+//     family:"halvaei",
+//     name:"hamed"
+// }
+
+
+// let usreImpelement2:IUser={
+//     email:"d@k.com",
+//     family:"halvaei",
+//     name:"hamed"
+// }
+
+// function Rejister(user:IUser)
+// {
+//     console.log(user);
+// }
+
+// //----------------polymorphisem....----.!
+// Rejister(usreImpelement1)
+// Rejister(usreImpelement2)
+
+
+// //------------Interface Immpelement--------------------
+// interface IUserManger{
+//     Rejisre:(user:IUser)=>boolean;
+//     Login:(userName:string,passWord:string)=>void;
+// }
+
+// class UserManager implements IUserManger
+// {
+//     Rejisre(inpuUser:IUser){
+//         return true;
+//     }
+//     Login(userName:string,passWord:string)
+//     {
+
+//     }
+// }
+
+
+// class  Person {
+//     name:string;
+//     family:string;
+//     email:string;
+
+//     constructor(){
+//         this.name="";
+//         this.family="";
+//         this.email="";
+//     }
+// }
+// // در حکم سازنده کلاس عمل می کند!.م
+
+// let p1 = new Person();
+// p1.name="hamed";
+// p1.family="halavei";
+// p1.email="H@h.com";
+// console.log(p1);
+// console.log(p1.name+" " +p1.family)
+ 
+
+//----06--------
+// // Generic
+
+// //فانکشن با تایپ آنانیموووووس
+// // function PrintInfo(data:any):any
+// // {
+// //     console.log(data);
+// // }
+
+// // PrintInfo([1,2,3,4,5,6,7,8,9]);
+
+
+// //generic funcftions----------
+// function MyType<T>(value:T):T 
+// {
+//     return value;
+// }
+
+// // console.log(MyType(123))
+// // console.log(MyType('salam'))
+// // console.log(MyType<string>('typeString'))
+
+// function arrayType<T>(data:T[]):T[]
+// {
+//     return data;
+// }
+
+// console.log(arrayType<string>(['a','b','c']))
+
+//----07--------
+// Module
+
+
 
