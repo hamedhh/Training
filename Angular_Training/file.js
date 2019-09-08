@@ -31,23 +31,22 @@
 //----03--------
 // let Name:string='Hamed';//..بجای استفاده از وّرررر در جاوااسکریپت
 //----04--------
-//نوع خروجی تابع را هم میتوان نوشت
-function sum(a, b) {
-    return a + b;
-}
-console.log(sum(5, 8));
-// let : اگر استفاده شود دیگر نمیتوان از آن متغییر در بلوک مورد نظر تعبریف کرد
-var fullName = function (firstName, lastName) {
-    return firstName + " " + lastName;
-};
-console.log(fullName("hamed", "halvaei"));
-//param : در تایپ اسکرریپت به صورت زیر تعریف میشوئ
-function ShowName(name) {
-    var names = [];
-    for (var _i = 1; _i < arguments.length; _i++) {
-        names[_i - 1] = arguments[_i];
-    }
-    console.log(names);
-    return name + " : ... " + names.join(" ");
-}
-console.log(ShowName("hamed", "mamad", "ali", "hasan"));
+// //نوع خروجی تابع را هم میتوان نوشت
+// function sum(a:number,b:number):number
+// {
+//     return a+b;
+// }
+// console.log(sum(5,8))
+// // let : اگر استفاده شود دیگر نمیتوان از آن متغییر در بلوک مورد نظر تعبریف کرد
+// let fullName= function(firstName:string,lastName:string):string{
+//     return firstName + " " + lastName; 
+// }
+// console.log(fullName("hamed","halvaei"));
+// //param : در تایپ اسکرریپت به صورت زیر تعریف میشوئ
+// function ShowName(name:string,...names:string[]):string
+// {
+//     console.log(names);
+//     return name + " : ... "+names.join(" ");
+// }
+// console.log(ShowName("hamed","mamad","ali","hasan"))
+//----05--------
