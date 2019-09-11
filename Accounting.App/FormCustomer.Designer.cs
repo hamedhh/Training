@@ -33,7 +33,15 @@
             this.btnEditCustomer = new System.Windows.Forms.ToolStripButton();
             this.btnDeleteCustomer = new System.Windows.Forms.ToolStripButton();
             this.btnUpdateCustomer = new System.Windows.Forms.ToolStripButton();
+            this.txtFilter = new System.Windows.Forms.ToolStripTextBox();
+            this.lblSearch = new System.Windows.Forms.ToolStripLabel();
+            this.grdCustomer = new System.Windows.Forms.DataGridView();
+            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.toolStrip1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.grdCustomer)).BeginInit();
             this.SuspendLayout();
             // 
             // toolStrip1
@@ -42,7 +50,9 @@
             this.btnAddNewCustomer,
             this.btnEditCustomer,
             this.btnDeleteCustomer,
-            this.btnUpdateCustomer});
+            this.btnUpdateCustomer,
+            this.lblSearch,
+            this.txtFilter});
             this.toolStrip1.Location = new System.Drawing.Point(0, 0);
             this.toolStrip1.Name = "toolStrip1";
             this.toolStrip1.Size = new System.Drawing.Size(491, 62);
@@ -89,18 +99,78 @@
             this.btnUpdateCustomer.Text = "به روز رسانی";
             this.btnUpdateCustomer.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             // 
+            // txtFilter
+            // 
+            this.txtFilter.Name = "txtFilter";
+            this.txtFilter.Size = new System.Drawing.Size(100, 62);
+            // 
+            // lblSearch
+            // 
+            this.lblSearch.Name = "lblSearch";
+            this.lblSearch.Size = new System.Drawing.Size(39, 59);
+            this.lblSearch.Text = "جستجو";
+            // 
+            // grdCustomer
+            // 
+            this.grdCustomer.AllowUserToAddRows = false;
+            this.grdCustomer.AllowUserToDeleteRows = false;
+            this.grdCustomer.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.grdCustomer.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Column1,
+            this.Column2,
+            this.Column3,
+            this.Column4});
+            this.grdCustomer.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.grdCustomer.Location = new System.Drawing.Point(0, 62);
+            this.grdCustomer.Name = "grdCustomer";
+            this.grdCustomer.ReadOnly = true;
+            this.grdCustomer.Size = new System.Drawing.Size(491, 313);
+            this.grdCustomer.TabIndex = 1;
+            // 
+            // Column1
+            // 
+            this.Column1.DataPropertyName = "FullName";
+            this.Column1.HeaderText = "نام";
+            this.Column1.Name = "Column1";
+            this.Column1.ReadOnly = true;
+            // 
+            // Column2
+            // 
+            this.Column2.DataPropertyName = "Mobile";
+            this.Column2.HeaderText = "موبایل";
+            this.Column2.Name = "Column2";
+            this.Column2.ReadOnly = true;
+            // 
+            // Column3
+            // 
+            this.Column3.DataPropertyName = "Email";
+            this.Column3.HeaderText = "ایمیل";
+            this.Column3.Name = "Column3";
+            this.Column3.ReadOnly = true;
+            // 
+            // Column4
+            // 
+            this.Column4.DataPropertyName = "CustomerID";
+            this.Column4.HeaderText = "CustomerID";
+            this.Column4.Name = "Column4";
+            this.Column4.ReadOnly = true;
+            this.Column4.Visible = false;
+            // 
             // FormCustomer
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(491, 375);
+            this.Controls.Add(this.grdCustomer);
             this.Controls.Add(this.toolStrip1);
             this.Name = "FormCustomer";
             this.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "لیست اشخاص";
+            this.Load += new System.EventHandler(this.FormCustomer_Load);
             this.toolStrip1.ResumeLayout(false);
             this.toolStrip1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.grdCustomer)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -113,5 +183,12 @@
         private System.Windows.Forms.ToolStripButton btnEditCustomer;
         private System.Windows.Forms.ToolStripButton btnDeleteCustomer;
         private System.Windows.Forms.ToolStripButton btnUpdateCustomer;
+        private System.Windows.Forms.ToolStripTextBox txtFilter;
+        private System.Windows.Forms.ToolStripLabel lblSearch;
+        private System.Windows.Forms.DataGridView grdCustomer;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
     }
 }

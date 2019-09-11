@@ -7,6 +7,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Accounting.DataLayer;
+using Accounting.DataLayer.Models;
+using Accounting.DataLayer.Context;
 
 namespace Accounting.App
 {
@@ -15,6 +18,19 @@ namespace Accounting.App
         public FormCustomer()
         {
             InitializeComponent();
+        }
+
+        private void FormCustomer_Load(object sender, EventArgs e)
+        {
+            BindGrid(); 
+        }
+
+        void BindGrid()
+        {
+            using (UnitOfWork db = new UnitOfWork())
+            {
+                grdCustomer.DataSource= db.ICustomerrepository.GetAllCustomers().ToList();
+            }//متد دیسپور یونیت آو ورک فراخوانی می شود!
         }
     }
 }
