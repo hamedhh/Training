@@ -22,6 +22,7 @@ namespace Accounting.App
 
         private void FormCustomer_Load(object sender, EventArgs e)
         {
+            grdCustomer.AutoGenerateColumns = false;
             BindGrid(); 
         }
 
@@ -31,6 +32,20 @@ namespace Accounting.App
             {
                 grdCustomer.DataSource= db.ICustomerrepository.GetAllCustomers().ToList();
             }//متد دیسپور یونیت آو ورک فراخوانی می شود!
+        }
+
+        private void txtFilter_TextChanged(object sender, EventArgs e)
+        {
+            using (UnitOfWork db = new UnitOfWork())
+            {
+                grdCustomer.DataSource = db.ICustomerrepository.FilterCustomer(txtFilter.Text).ToList();
+            }
+        }
+
+        private void btnUpdateCustomer_Click(object sender, EventArgs e)
+        {
+            txtFilter.Text = null;
+            BindGrid();
         }
     }
 }

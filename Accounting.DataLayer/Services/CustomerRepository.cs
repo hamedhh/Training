@@ -17,6 +17,7 @@ namespace Accounting.DataLayer.Services
             ///dependency Injection ! (First solution)
            db = context;
         }
+
         public bool DeleteCustomer(int customerId)
         {
             try
@@ -45,6 +46,11 @@ namespace Accounting.DataLayer.Services
 
                 return false;
             }
+        }
+
+        public IEnumerable<Customer> FilterCustomer(string input)
+        {
+            return db.Customers.Where(a => a.Address.Contains(input) || a.Email.Contains(input) || a.FullName.Contains(input) || a.Mobile.Contains(input));
         }
 
         public List<Customer> GetAllCustomers()

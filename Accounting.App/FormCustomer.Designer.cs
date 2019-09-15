@@ -33,8 +33,8 @@
             this.btnEditCustomer = new System.Windows.Forms.ToolStripButton();
             this.btnDeleteCustomer = new System.Windows.Forms.ToolStripButton();
             this.btnUpdateCustomer = new System.Windows.Forms.ToolStripButton();
-            this.txtFilter = new System.Windows.Forms.ToolStripTextBox();
             this.lblSearch = new System.Windows.Forms.ToolStripLabel();
+            this.txtFilter = new System.Windows.Forms.ToolStripTextBox();
             this.grdCustomer = new System.Windows.Forms.DataGridView();
             this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -98,11 +98,7 @@
             this.btnUpdateCustomer.Size = new System.Drawing.Size(77, 59);
             this.btnUpdateCustomer.Text = "به روز رسانی";
             this.btnUpdateCustomer.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            // 
-            // txtFilter
-            // 
-            this.txtFilter.Name = "txtFilter";
-            this.txtFilter.Size = new System.Drawing.Size(100, 62);
+            this.btnUpdateCustomer.Click += new System.EventHandler(this.btnUpdateCustomer_Click);
             // 
             // lblSearch
             // 
@@ -110,10 +106,17 @@
             this.lblSearch.Size = new System.Drawing.Size(39, 59);
             this.lblSearch.Text = "جستجو";
             // 
+            // txtFilter
+            // 
+            this.txtFilter.Name = "txtFilter";
+            this.txtFilter.Size = new System.Drawing.Size(100, 62);
+            this.txtFilter.TextChanged += new System.EventHandler(this.txtFilter_TextChanged);
+            // 
             // grdCustomer
             // 
             this.grdCustomer.AllowUserToAddRows = false;
             this.grdCustomer.AllowUserToDeleteRows = false;
+            this.grdCustomer.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.grdCustomer.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.grdCustomer.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Column1,
