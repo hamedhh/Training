@@ -68,6 +68,7 @@
             this.btnAddNewCustomer.Size = new System.Drawing.Size(44, 59);
             this.btnAddNewCustomer.Text = "درج";
             this.btnAddNewCustomer.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.btnAddNewCustomer.Click += new System.EventHandler(this.btnAddNewCustomer_Click);
             // 
             // btnEditCustomer
             // 
@@ -78,6 +79,7 @@
             this.btnEditCustomer.Size = new System.Drawing.Size(44, 59);
             this.btnEditCustomer.Text = "ویرایش";
             this.btnEditCustomer.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.btnEditCustomer.Click += new System.EventHandler(this.btnAddNewCustomer_Click);
             // 
             // btnDeleteCustomer
             // 
@@ -88,6 +90,7 @@
             this.btnDeleteCustomer.Size = new System.Drawing.Size(44, 59);
             this.btnDeleteCustomer.Text = "حذف";
             this.btnDeleteCustomer.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.btnDeleteCustomer.Click += new System.EventHandler(this.btnDeleteCustomer_Click);
             // 
             // btnUpdateCustomer
             // 

@@ -33,5 +33,10 @@ namespace Accounting.DataLayer.Context
         {
             db.Dispose();
         }
+
+        public void SaveChange()
+        {
+            db.SaveChanges();
+        }
     }
 }

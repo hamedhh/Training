@@ -16,8 +16,5 @@ namespace Accounting.DataLayer.Repositories
         bool UpdateCustomer(Customer customer);
         bool DeleteCustomer(Customer customer);
         bool DeleteCustomer(int customerId);
-        void Save();
-
-
     }
 }

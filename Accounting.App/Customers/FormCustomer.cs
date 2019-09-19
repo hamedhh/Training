@@ -10,6 +10,7 @@ using System.Windows.Forms;
 using Accounting.DataLayer;
 using Accounting.DataLayer.Models;
 using Accounting.DataLayer.Context;
+using Accounting.App.Customers;
 
 namespace Accounting.App
 {
@@ -17,11 +18,13 @@ namespace Accounting.App
     {
         public FormCustomer()
         {
+
             InitializeComponent();
         }
 
         private void FormCustomer_Load(object sender, EventArgs e)
         {
+            UnitOfWork db = new UnitOfWork();
             grdCustomer.AutoGenerateColumns = false;
             BindGrid(); 
         }
@@ -31,6 +34,7 @@ namespace Accounting.App
             using (UnitOfWork db = new UnitOfWork())
             {
                 grdCustomer.DataSource= db.ICustomerrepository.GetAllCustomers().ToList();
+                grdCustomer.Refresh();
             }//متد دیسپور یونیت آو ورک فراخوانی می شود!
         }
 
@@ -46,6 +50,34 @@ namespace Accounting.App
         {
             txtFilter.Text = null;
             BindGrid();
+        }
+
+        private void btnDeleteCustomer_Click(object sender, EventArgs e)
+        {
+            if (grdCustomer.CurrentRow.Selected)
+            {
+                var customerId =int.Parse( grdCustomer.CurrentRow.Cells[3].Value.ToString());
+                using (UnitOfWork db = new UnitOfWork())
+                {
+                    string name = grdCustomer.CurrentRow.Cells[0].Value.ToString();
+                    if(RtlMessageBox.Show($"ایا از حذف {name}مطمئن هستید؟", "توجه", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes)
+                    {
+                                 var res = db.ICustomerrepository.DeleteCustomer(customerId);
+                    db.SaveChange();
+                    MessageBox.Show("عملیات حدف با موفقیت انجام شد");
+                    BindGrid();
+                    }
+           
+                }
+            }
+            else
+                MessageBox.Show("مقداری انتخاب نشده است!");
+        }
+
+        private void btnAddNewCustomer_Click(object sender, EventArgs e)
+        {
+            FormAddOREditCustomer frmAddEdit = new FormAddOREditCustomer();
+            frmAddEdit.ShowDialog();
         }
     }
 }
